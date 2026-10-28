@@ -2,8 +2,10 @@
   "name": "ch-be-2-94925",
   "version": "1.0.0",
   "description": "Curso backend 2 coder",
-  "main": "index.js",
+  "main": "src/server.js",
   "scripts": {
+    "start": "node src/server.js",
+    "start:dev": "node --watch src/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -11,6 +13,7 @@
     "url": "git+https://github.com/marcelo-salar/bk--ch-be-2-94925.git"
   },
   "author": "Marcelo S",
+  "type": "module",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/marcelo-salar/bk--ch-be-2-94925/issues"
