@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/marcelo-salar/bk--ch-be-2-94925#readme",
   "dependencies": {
+    "bcrypt": "^6.0.0",
     "dotenv": "^18.0.9",
     "express": "^5.3.0",
     "mongoose": "^9.11.4"
