@@ -10,13 +10,21 @@ export class SessionController {
 
             // Respuesta 201
             res.status(201).json({
-                status: "succes",
+                status: "success",
                 payload: newUser
             });
             
         } catch (error) {
             // MongoDB cod 11000 violación de indice único
-            if (error.code === 11000) {
+            // if (error.code === 11000) {
+            //     return res.status(409).json({
+            //         status: "error",
+            //         message: "El email ya se encuentra registrado"
+            //     });
+            // }
+
+            // Captura si el servicio rechaza el email por texto o si MongoDB lanza el índice único (11000)
+            if (error.message.includes("registrado") || error.code === 11000) {
                 return res.status(409).json({
                     status: "error",
                     message: "El email ya se encuentra registrado"
@@ -29,12 +37,13 @@ export class SessionController {
                     message: error.message
                 })
             }
+            
+            console.log(error);
+            res.status(500).json({
+                status: "error",
+                message: "Error interno del servidor"
+            });
         }
       
-        console.log(error);
-        res.status(500).json({
-            status: "error",
-            message: "Error interno del servidor"
-        });
     };
 }
