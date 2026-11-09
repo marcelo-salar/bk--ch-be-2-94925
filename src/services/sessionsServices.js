@@ -24,7 +24,7 @@ export class SessionService {
             !password.trim() ) 
         {
             throw createServiceError(
-                "Failtan campos obligatorios o son invalidos",
+                "Faltan campos obligatorios o son invalidos",
                 400,
             );
         }
@@ -37,7 +37,7 @@ export class SessionService {
 
         if (!emailRegex.test(normalazedEmail)) {
             throw createServiceError(
-                "Formato de email invalid",
+                "Formato de email invalido",
                 400,
             );
         }
